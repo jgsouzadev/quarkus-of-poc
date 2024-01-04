@@ -1,8 +1,7 @@
 package personal.project.domain;
 
 import jakarta.persistence.*;
-
-import java.time.LocalDateTime;
+import personal.project.domain.enums.DocumentType;
 
 @Entity
 public class Document {
@@ -56,8 +55,4 @@ public class Document {
     @OneToOne(mappedBy = "document")
     @JoinColumn(name = "creator_id")
     private Creator creator;
-}
-
-public enum DocumentType {
-    CPF, RG, CNPJ;
 }
