@@ -60,14 +60,6 @@ public class Creator {
         this.birthday = birthday;
     }
 
-    public Document getDocument() {
-        return document;
-    }
-
-    public void setDocument(Document document) {
-        this.document = document;
-    }
-
     private String email;
     private String password;
 
@@ -78,7 +70,6 @@ public class Creator {
         this.password = password;
         this.about = about;
         this.birthday = birthday;
-        this.document = document;
     }
 
     public Creator() {}
@@ -87,8 +78,8 @@ public class Creator {
     private LocalDateTime birthday;
 
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "document_id", referencedColumnName = "id")
-    private Document document;
+//    @OneToOne(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "document_id", referencedColumnName = "id")
+//    private Document document;
 
 }

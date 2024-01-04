@@ -9,9 +9,9 @@ public class Document {
         this.id = id;
         this.document = document;
         this.type = type;
-        this.creator = creator;
     }
 
+    public Document() {}
     public Long getId() {
         return id;
     }
@@ -36,13 +36,6 @@ public class Document {
         this.type = type;
     }
 
-    public Creator getCreator() {
-        return creator;
-    }
-
-    public void setCreator(Creator creator) {
-        this.creator = creator;
-    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -50,9 +43,18 @@ public class Document {
 
     private Long document;
 
+    @Override
+    public String toString() {
+        return "Document{" +
+                "id=" + id +
+                ", document=" + document +
+                ", type=" + type +
+                '}';
+    }
+
     private DocumentType type;
 
-    @OneToOne(mappedBy = "document")
-    @JoinColumn(name = "creator_id")
-    private Creator creator;
+//    @OneToOne(mappedBy = "document")
+//    @JoinColumn(name = "creator_id")
+//    private Creator creator;
 }

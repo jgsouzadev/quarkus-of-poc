@@ -12,10 +12,10 @@ import personal.project.domain.enums.DocumentType;
 public class GreetingResource {
 
     @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    public Document hello() {
+    @Produces(MediaType.TEXT_PLAIN)
+    public String hello() {
         return new Document(
                 1L, 12345678910L, DocumentType.CPF, new Creator()
-        );
+        ).toString();
     }
 }
