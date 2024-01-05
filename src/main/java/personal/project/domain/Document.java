@@ -11,7 +11,9 @@ public class Document {
         this.type = type;
     }
 
-    public Document() {}
+    public Document() {
+    }
+
     public Long getId() {
         return id;
     }
@@ -43,6 +45,9 @@ public class Document {
 
     private Long document;
 
+    private DocumentType type;
+
+
     @Override
     public String toString() {
         return "Document{" +
@@ -52,9 +57,7 @@ public class Document {
                 '}';
     }
 
-    private DocumentType type;
-
-//    @OneToOne(mappedBy = "document")
-//    @JoinColumn(name = "creator_id")
-//    private Creator creator;
+    @OneToOne(mappedBy = "document")
+    @JoinColumn(name = "creator_id")
+    private Creator creator;
 }

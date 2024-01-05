@@ -77,9 +77,7 @@ public class Creator {
     private String about;
     private LocalDateTime birthday;
 
-
-//    @OneToOne(cascade = CascadeType.ALL)
-//    @JoinColumn(name = "document_id", referencedColumnName = "id")
-//    private Document document;
+    @OneToOne(cascade = CascadeType.ALL)
+    private Document document;
 
 }
